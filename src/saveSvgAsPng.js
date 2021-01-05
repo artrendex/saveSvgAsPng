@@ -121,9 +121,9 @@
     Array.from(el.querySelectorAll('image')).map(image => {
       let href = image.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || image.getAttribute('href');
       if (!href) return Promise.resolve(null);
-      if (isExternal(href)) {
-        href += (href.indexOf('?') === -1 ? '?' : '&') + 't=' + new Date().valueOf();
-      }
+//       if (isExternal(href)) {
+//         href += (href.indexOf('?') === -1 ? '?' : '&') + 't=' + new Date().valueOf();
+//       }
       return new Promise((resolve, reject) => {
         const canvas = document.createElement('canvas');
         const img = new Image();
